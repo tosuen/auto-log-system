@@ -1,9 +1,24 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { Routes, Route } from 'react-router-dom';
+import LogEntry from './pages/LogEntry';
+import './App.css';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+function App() {
+  return (
+    <div className="app">
+      <header>
+        <h1>JMSDF Log System</h1>
+      </header>
+      <main>
+        <Routes>
+          <Route path="/" element={<LogEntry />} />
+        </Routes>
+      </main>
+      <footer>
+        <p>© 2024 JMSDF</p>
+      </footer>
+    </div>
+  );
+}
+
+export default App;
